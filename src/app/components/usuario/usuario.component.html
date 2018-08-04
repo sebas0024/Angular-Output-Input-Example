@@ -1,0 +1,15 @@
+<app-registrar [estarAtento]="guardador" (mandarUsuarioAlPadre)="recibirUsuarioDelHijo($event)"></app-registrar>
+
+
+
+<button type="button" class="btn btn-success" *ngIf="guardador == 0" (click)="guardarUsuario()">Guardar</button>
+<button type="button" class="btn btn-success" *ngIf="guardador == 2" (click)="editarUsuario()">Editar</button>
+
+
+
+<app-listar [recibirUsuarioDelPadre]="usuario" (devolderleUsuarioAlPadre)="recibirUsuarioDelHijoListar($event)" ></app-listar>
+
+
+
+
+

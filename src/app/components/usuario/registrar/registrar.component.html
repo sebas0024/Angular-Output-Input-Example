@@ -1,0 +1,55 @@
+<div class="card">
+  <div class="card-block">
+    <form [formGroup]="formulario">
+      <div class="modal-header">
+        <h4 class="modal-title">Registrar usuario</h4>
+      </div>
+      <div class="modal-body">
+        <div class="row">
+          <div class="col-12">
+            <div class="row">
+              <div class="col-6 form-group">
+                <label>Nombres</label>
+                <input type="text" formControlName="nombre" [(ngModel)]="ngModel.nombre" class="form-control">
+                <small class="form-text text-muted danger" *ngIf="isValid('nombre', 'required')">Este campo es requerido</small>
+                <small class="form-text text-muted danger" *ngIf="isValid('nombre', 'maxlength')">La longitud máxima es de 25 caracteres</small>
+              </div>
+              <div class="col-6 form-group">
+                <label>Apellidos</label>
+                <input type="text" formControlName="apellido" [(ngModel)]="ngModel.apellido" class="form-control">
+                <small class="form-text text-muted danger" *ngIf="isValid('apellido', 'required')">Este campo es requerido</small>
+                <small class="form-text text-muted danger" *ngIf="isValid('apellido', 'maxlength')">La longitud máxima es de 25 caracteres</small>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-6 form-group">
+                <label>Tipo Documento</label>
+                <select formControlName="tipoDoc" [(ngModel)]="ngModel.tipoDoc"  class="form-control">
+                  <option>Cedula</option>
+                  <option>Targeta Identidad</option>
+                  <option>Cedula Extranjeria</option>
+                  <option>NIT</option>
+                </select>
+                <small class="form-text text-muted danger" *ngIf="isValid('tipoDoc', 'required')">Este campo es requerido</small>                
+              </div>
+              <div class="col-6 form-group">
+                <label>Número Documento</label>
+                <input type="text" formControlName="numeroDoc" [(ngModel)]="ngModel.numeroDoc" class="form-control">
+                <small class="form-text text-muted danger" *ngIf="isValid('numeroDoc', 'required')">Este campo es requerido</small>
+                <small class="form-text text-muted danger" *ngIf="isValid('numeroDoc', 'maxlength')">La longitud máxima es de 15 caracteres</small>
+                <small class="form-text text-muted danger" *ngIf="isValid('numeroDoc', 'pattern')">Este campo solo admite caracteres especiales</small>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-6 form-group">
+                <label>Edad</label>
+                <input type="text" formControlName="edad" [(ngModel)]="ngModel.edad" class="form-control">
+                <small class="form-text text-muted danger" *ngIf="isValid('edad', 'pattern')">Este campo solo admite caracteres númericos</small>                
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </form>
+  </div>
+</div>

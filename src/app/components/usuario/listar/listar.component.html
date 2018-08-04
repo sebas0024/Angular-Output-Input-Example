@@ -1,0 +1,31 @@
+<div class="card">
+  <div class="card-block">
+    <div class="modal-header">
+      <h4 class="modal-title">Lista de usuarios</h4>
+    </div>
+    <div class="modal-body">
+      <table class="table table-inverse">
+        <thead>
+          <tr>
+            <th>#</th>
+            <th>Nombres</th>
+            <th>Apellidos</th>
+            <th>Tipo Documento</th>
+            <th>Número Documento</th>
+            <th>Acción</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let usuario of usuarios; let i = index">
+            <th>{{i+1}}</th>
+            <th>{{usuario.nombre}}</th>
+            <th>{{usuario.apellido}}</th>
+            <th>{{usuario.tipoDoc}}</th>
+            <th>{{usuario.numeroDoc}}</th>
+            <th><button class="btn btn-primary" (click)="verUsuario(i)">ver</button></th>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
